@@ -5,7 +5,7 @@ RestTemplate  带header 的请求
 postForEntity方法
 （参数单个对象）
 
-         RestTemplate restTemplate = new RestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
         // 2、使用postForEntity请求接口
         MultiValueMap<String, Object> paramMap = new LinkedMultiValueMap<String, Object>();
         paramMap.add("id", UUID.randomUUID().toString());
@@ -15,10 +15,8 @@ postForEntity方法
         String body = response2.getBody();
         
 （多个参数 列表集合）
-  /**
-     * list集合对象传值
-     */
-    public Object postMethodManyParam() {
+         
+         public Object postMethodManyParam() {
         HashMap<String, Object> map = null;
         List<Map<String, Object>> listParam = new ArrayList<>();
         for (int i = 0; i < 2; i++) {
@@ -27,7 +25,6 @@ postForEntity方法
             map.put("name", "System.name " + i);
             listParam.add(map);
         }
-
         RestTemplate restTemplate = new RestTemplate();
         MultiValueMap<String, Object> paramMap = new LinkedMultiValueMap<String, Object>();
         paramMap.add("dataList", listParam);
