@@ -4,6 +4,7 @@ RestTemplate  带header 的请求
 
 postForEntity方法
 （参数单个对象）
+
          RestTemplate restTemplate = new RestTemplate();
         // 2、使用postForEntity请求接口
         MultiValueMap<String, Object> paramMap = new LinkedMultiValueMap<String, Object>();
