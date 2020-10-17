@@ -5,7 +5,7 @@ RestTemplate  带header 的请求
 传参方案 https://zhuanlan.zhihu.com/p/89223401
 
 postForEntity方法
-（参数单个对象）
+（参数单个对象）（接口用 Map<String,Object> 接收）
 
         RestTemplate restTemplate = new RestTemplate();
         // 2、使用postForEntity请求接口
@@ -16,7 +16,7 @@ postForEntity方法
         ResponseEntity<String> response2 = restTemplate.postForEntity(thirdUrlPost, httpEntity, String.class);
         String body = response2.getBody();
         
-（多个参数 列表集合）
+（多个参数 列表集合）（接口用 Map<String,Object> 接收）
          
          public Object postMethodManyParam() {
         HashMap<String, Object> map = null;
@@ -37,3 +37,14 @@ postForEntity方法
 
         return body;
     }
+
+（多个对象集合）（后台用@RequestBody List<ThirdInfo> params 接收）（string json数组传参）
+        
+        JSONObject jsonObject = null;
+        JSONArray jsonArray = new JSONArray();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.valueOf(MediaType.APPLICATION_JSON_UTF8_VALUE));
+        HttpEntity<String> httpEntity = new HttpEntity<String>(jsonArray.toJSONString(),headers);
+        ResponseEntity<String> response2 = restTemplate.postForEntity(thirdUrlPost2, httpEntity, String.class);
+        String body = response2.getBody();
+
