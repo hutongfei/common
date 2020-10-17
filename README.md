@@ -2,6 +2,8 @@
 
 RestTemplate  带header 的请求
 
+传参方案 https://zhuanlan.zhihu.com/p/89223401
+
 postForEntity方法
 （参数单个对象）
 
