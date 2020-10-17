@@ -38,13 +38,13 @@ postForEntity方法
         return body;
     }
 
-（多个对象集合）（后台用@RequestBody List<ThirdInfo> params 接收）（string json数组传参）
+（多个对象集合）（后台用@RequestBody List<ThirdInfo> params 接收）（List<Map<String,Object>> 传参）
         
-        JSONObject jsonObject = null;
-        JSONArray jsonArray = new JSONArray();
+        Map<String, Object> paramMap = null;
+        ArrayList<Map<String, Object>> mapList = new ArrayList<>();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.valueOf(MediaType.APPLICATION_JSON_UTF8_VALUE));
-        HttpEntity<String> httpEntity = new HttpEntity<String>(jsonArray.toJSONString(),headers);
+        HttpEntity<ArrayList<Map<String, Object>>> httpEntity = new HttpEntity<ArrayList<Map<String, Object>>>(mapList,headers);
         ResponseEntity<String> response2 = restTemplate.postForEntity(thirdUrlPost2, httpEntity, String.class);
         String body = response2.getBody();
 
