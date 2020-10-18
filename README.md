@@ -16,7 +16,23 @@ postForEntity方法
         ResponseEntity<String> response2 = restTemplate.postForEntity(thirdUrlPost, httpEntity, String.class);
         String body = response2.getBody();
         
-（多个参数 列表集合）（接口用 Map<String,Object> 接收）
+        
+ 单个对象传参（后台用@RequestBody List<ThirdInfo> params 接收） （Map<String,Object> 传参）
+        Map<String, Object> paramMap = new HashMap<>();
+        List<Map<String, Object>> mapList = new ArrayList<>();
+
+        paramMap.put("id", "1");
+        paramMap.put("name", "name-"+UUID.randomUUID().toString());
+        paramMap.put("age", 10);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.valueOf(MediaType.APPLICATION_JSON_UTF8_VALUE));
+        HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<Map<String, Object>>(paramMap,headers);
+
+        ResponseEntity<String> response2 = restTemplate.postForEntity(thirdUrlPost3, httpEntity, String.class);
+        String body = response2.getBody();
+        
+ 对象集合传参（接口用 Map<String,Object> 接收）
          
          public Object postMethodManyParam() {
         HashMap<String, Object> map = null;
@@ -38,7 +54,7 @@ postForEntity方法
         return body;
     }
 
-（多个对象集合）（后台用@RequestBody List<ThirdInfo> params 接收）（List<Map<String,Object>> 传参）
+（对象集合传参）（后台用@RequestBody List<ThirdInfo> params 接收）（List<Map<String,Object>> 传参）
         
         Map<String, Object> paramMap = null;
         ArrayList<Map<String, Object>> mapList = new ArrayList<>();
@@ -47,4 +63,4 @@ postForEntity方法
         HttpEntity<ArrayList<Map<String, Object>>> httpEntity = new HttpEntity<ArrayList<Map<String, Object>>>(mapList,headers);
         ResponseEntity<String> response2 = restTemplate.postForEntity(thirdUrlPost2, httpEntity, String.class);
         String body = response2.getBody();
-
+        
