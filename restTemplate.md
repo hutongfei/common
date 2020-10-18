@@ -64,3 +64,4 @@ postForEntity方法
         ResponseEntity<String> response2 = restTemplate.postForEntity(thirdUrlPost2, httpEntity, String.class);
         String body = response2.getBody();
         
+注意：如果后台不是用 @requestBody 接收，必须要resttemplate postForEntity 必须要 MultiValueMap结构传参
