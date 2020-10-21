@@ -20,7 +20,7 @@
 
 -XX:SurvivorRatio=1
 
--XX:MaxDirectMemorySize=1G
+-XX:MaxDirectMemorySize=1G 堆外内存
 
 -XX:+DisableExplicitGC
 
