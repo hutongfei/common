@@ -32,7 +32,7 @@ public class OSSUtils {
     //"<yourAccessKeyId>"
     private static String accessKeyId = "*******";
     //"<yourAccessKeySecret>"
-    private static String accessKeySecret = "Z9D33j0weEKpVCQpdOIe6CWmjPfdHa";
+    private static String accessKeySecret = "*******";
     //OSS 储存空间 bucket名字 "<yourBucketName>"
     private static String bucketName = "hutf-bucket";
 
