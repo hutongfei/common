@@ -30,7 +30,7 @@ public class OSSUtils {
     private static String endpoint = "https://oss-cn-beijing.aliyuncs.com";
     // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录RAM控制台创建RAM账号。
     //"<yourAccessKeyId>"
-    private static String accessKeyId = "LTAI5t9aNf3VqQd6dDooxPU3";
+    private static String accessKeyId = "*******";
     //"<yourAccessKeySecret>"
     private static String accessKeySecret = "Z9D33j0weEKpVCQpdOIe6CWmjPfdHa";
     //OSS 储存空间 bucket名字 "<yourBucketName>"
